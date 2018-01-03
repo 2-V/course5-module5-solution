@@ -1,0 +1,73 @@
+<div class="container">
+	<h2 id="signup-title" class="text-center">Sign Up to Receive Our Newsletter</h2>
+
+	<form class="form form-horizontal" name="signupForm" novalidate>
+		<div class="form-group">
+			<label class="col-sm-3">First Name</label>
+			<div class="col-sm-4">
+				<input type="text" ng-model="restaurant.user.firstName" name="firstName" required class="form-control">
+			</div>
+			<div class="col-sm-4">
+				<span ng-if="signupForm.firstName.$invalid && signupForm.firstName.$touched">
+					First name is required
+				</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3">Last Name</label>
+			<div class="col-sm-4">
+				<input type="text" ng-model="restaurant.user.lastName" name="lastName" required class="form-control">
+			</div>
+			<div class="col-sm-4">
+				<span ng-if="signupForm.lastName.$invalid && signupForm.lastName.$touched">
+					Last name is required
+				</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3">Email</label>
+			<div class="col-sm-4">
+				<input type="email" ng-model="restaurant.user.email" name="email" required class="form-control">
+			</div>
+			<div class="col-sm-4">
+				<span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+					A valid email is required
+				</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3">Phone number</label>
+			<div class="col-sm-4">
+				<input type="text" ng-model="restaurant.user.phone" name="phone" required pattern="(\d{3})-(\d{3})-(\d{4})" class="form-control">
+			</div>
+			<div class="col-sm-4">
+				<span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+					A valid phone number is required (###-###-####)
+				</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3">What is your favorite menu item?</label>
+			<div class="col-sm-4">
+				<input type="text" ng-model="restaurant.user.favoriteItem" name="favoriteItem" required class="form-control">
+			</div>
+			<div class="col-sm-4">
+				<span ng-if="signupForm.favoriteItem.$invalid && signupForm.favoriteItem.$touched">
+					Please enter your favorite menu item
+				</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-4">
+				<button ng-disabled="signupForm.$invalid" ng-click="signupForm.submit()" class="btn btn-primary">Submit</button>
+			</div>
+
+
+	</form>
+</div>
